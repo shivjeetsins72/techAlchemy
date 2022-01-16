@@ -34,6 +34,7 @@ app.get("/", [middleware.validateJwt.verifyToken],(req, res) => {
 });
 
 require('./routes/userRoutes')(app);
+require('./routes/newsRoutes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

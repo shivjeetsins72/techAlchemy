@@ -1,7 +1,7 @@
 const db = require("../models/mysql");
 const User = db.user;
 
-checkDuplicateUsernameOrEmail = async (req, res, next) => {
+checkDuplicateEmail = async (req, res, next) => {
   try {
     // Email
     user = await User.findOne({
@@ -24,7 +24,7 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
   }
 };
 const verifySignUp = {
-    checkDuplicateUsernameOrEmail,
+    checkDuplicateEmail,
   };
   
-  module.exports = verifySignUp;
+module.exports = verifySignUp;
