@@ -1,0 +1,39 @@
+{
+  "name": "techalchemy",
+  "version": "1.0.0",
+  "description": "A sample weather application which has the features like signup, login, logout and view news.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivssin72/techAlchemy.git"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "signup",
+    "login",
+    "rest",
+    "api",
+    "jwt",
+    "authentication",
+    "mysql"
+  ],
+  "author": "Shivjeet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivssin72/techAlchemy/issues"
+  },
+  "homepage": "https://github.com/shivssin72/techAlchemy#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  }
+}
