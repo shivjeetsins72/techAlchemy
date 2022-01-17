@@ -20,7 +20,6 @@ getNews = async(params) => {
 }
 
 getWeatherForcast = async() => {
-    console.log("httpUtilllllllllllllllllllllllllllll")
     const result = await axios({
         method: "GET",
         url: `https://api.openweathermap.org/data/2.5/onecall`,
