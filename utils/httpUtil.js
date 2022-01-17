@@ -19,9 +19,29 @@ getNews = async(params) => {
     return(result)
 }
 
+getWeatherForcast = async() => {
+    console.log("httpUtilllllllllllllllllllllllllllll")
+    const result = await axios({
+        method: "GET",
+        url: `https://api.openweathermap.org/data/2.5/onecall`,
+        headers: {
+        "Content-Type": "application/json"
+        },
+        params: {
+            exclude: "current,hourly,minutely,alerts",
+            lat: "12.9716",
+            lon: "77.5946",
+            units: "metric",
+            appid: "506e4963ab6267a99bce7d229d53048c"// API KEY
+        },
+    });
+    return(result)
+}
+
 
 const httpUtil = {
-    getNews
+    getNews,
+    getWeatherForcast
   };
   
 module.exports = httpUtil;
