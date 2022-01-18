@@ -17,7 +17,7 @@ Database Connection:
     CREATE USER 'shivjeet'@'localhost' IDENTIFIED BY 'Shivjeets7@@';
     command: 
     GRANT ALL PRIVILEGES ON * . * TO 'shivjeet'@'localhost';
-3. To use 3rd party apis you will need ApiKey. I have hardcode my keys in this application. You can use the same or you can replace them with yours.
+3. To use 3rd party apis you will need ApiKey. I have hardcoded my keys in this application. You can use the same or you can replace them with yours.
 4. To insatll all the packages/libraries used:
     command: 
     npm insatll
