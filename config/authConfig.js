@@ -1,3 +1,3 @@
 module.exports = {
-    secret: "shivjeet-secret-key"
-  };
+	secret: "shivjeet-secret-key"
+};

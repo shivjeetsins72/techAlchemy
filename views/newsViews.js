@@ -1,14 +1,14 @@
-formatNewsResult = (articles) => {
-    let result = []
-    articles.forEach((element) =>{
-        result.push({
-            headline: element.title,
-            link: element.url
-        })
-    })
-    return result
-}
+const formatNewsResult = (articles) => {
+	const result = [];
+	articles.forEach((element) =>{
+		result.push({
+			headline: element.title,
+			link: element.url
+		});
+	});
+	return result;
+};
 const newsViews = {
-    formatNewsResult
-  };
+	formatNewsResult
+};
 module.exports = newsViews;

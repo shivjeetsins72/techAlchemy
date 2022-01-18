@@ -1,18 +1,18 @@
-const middleware = require("../middleware")
+const middleware = require("../middleware");
 const controller = require("../controllers/newsController");
 
 module.exports = function(app) {
-  app.use(function(req, res, next) {
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, Content-Type, Accept"
-    );
-    next();
-  });
+	app.use(function(req, res, next) {
+		res.header(
+			"Access-Control-Allow-Headers",
+			"Origin, Content-Type, Accept"
+		);
+		next();
+	});
 
-  app.get(
-    "/api/news",
-    [middleware.validateJwt.verifyToken],
-    controller.news
-  );
+	app.get(
+		"/api/news",
+		[middleware.validateJwt.verifyToken],
+		controller.news
+	);
 };
