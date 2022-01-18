@@ -14,7 +14,7 @@ exports.signup = async (req, res) => {
 			email: req.body.email,
 			password: bcrypt.hashSync(req.body.password, 8),
 		});
-		res.status(200).send({
+		return res.status(200).send({
 			status:200,
 			error: false,
 			message: "User created successfully"});
@@ -37,8 +37,8 @@ exports.signin = async (req, res) => {
 		});
 
 		if (!user) {
-			return res.status(404).send({
-				status: 404,
+			return res.status(400).send({
+				status: 400,
 				error: true,
 				message: "User Not found!" });
 		}
@@ -78,6 +78,12 @@ exports.signin = async (req, res) => {
 //Function to signout from the application
 exports.signout = async (req, res) => {
 	try {
+		if (!req.session.token){
+			return res.status(400).send({
+				status: 400,
+				error: true,
+				message: "User not signed in!" });
+		}
 		req.session = null;
 		return res.status(200).send({
 			status: 200,

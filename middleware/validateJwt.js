@@ -9,7 +9,7 @@ const verifyToken = (req, res, next) => {
 		return res.status(403).send({
 			status: 403,
 			error: true,
-			message: "Authentication error. Token unavailable!",
+			message: "Authentication error. Bearer token unavailable!",
 		});
 	}
 

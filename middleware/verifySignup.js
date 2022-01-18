@@ -5,6 +5,27 @@ const User = db.user;
 const checkDuplicateEmail = async (req, res, next) => {
 	try {
 		// Email
+		if(req.body.name === undefined || req.body.name === ""){
+			return res.status(400).send({
+				status: 400,
+				error: true,
+				errorMessage: "Failed! Name is missing!"
+			});
+		}
+		if(req.body.email === undefined || req.body.email === ""){
+			return res.status(400).send({
+				status: 400,
+				error: true,
+				errorMessage: "Failed! Email is missing!"
+			});
+		}
+		if(req.body.password === undefined || req.body.password === ""){
+			return res.status(400).send({
+				status: 400,
+				error: true,
+				errorMessage: "Failed! Password is missing!"
+			});
+		}
 		const user = await User.findOne({
 			where: {
 				email: req.body.email
@@ -24,7 +45,7 @@ const checkDuplicateEmail = async (req, res, next) => {
 		return res.status(500).send({
 			status: 500,
 			error: true,
-			errorMessage: "Unable to validate Username!"
+			errorMessage: "Unable to create user!"
 		});
 	}
 };

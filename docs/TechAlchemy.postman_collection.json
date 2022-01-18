@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "767b2d06-cc38-4a16-bfc8-0a669c3c56e3",
+		"name": "TechAlchemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userSignup",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const req = JSON.parse(pm.request.body)",
+							"const obj = {email: req.email, password: req.password}",
+							"postman.setEnvironmentVariable(`TechAlchemy_User`, JSON.stringify(obj));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"password\": \"{{$randomPassword}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/auth/signup",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userSignin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const req = JSON.parse(pm.request.body)",
+							"const obj = {email: req.email}",
+							"postman.setEnvironmentVariable(`TechAlchemy_UserEmail`, JSON.stringify(obj));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{{TechAlchemy_User}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/auth/signin",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userSignout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{{TechAlchemy_UserEmail}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/auth/signout",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newsHeadlines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/api/news?country=us",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"news"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "us"
+						},
+						{
+							"key": "keyword",
+							"value": "Novak Djokovic",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weatherForcast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/api/weather",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"weather"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
