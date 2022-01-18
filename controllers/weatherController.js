@@ -19,6 +19,10 @@ exports.weather = async (req, res) => {
 			data: data
 		});
 	} catch (error) {
-		res.status(500).send({ message: error.message });
+		res.status(500).send({
+			status: 500,
+			error: true,
+			message: error.message
+		});
 	}
 };

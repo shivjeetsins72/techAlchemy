@@ -28,7 +28,7 @@ describe("Weather API", function() {
 //Authenticated api test.
 describe("User API", function() {
 
-	it("should signup user, signin user, check token and signout user", function(done) {
+	it("should signup user, signin user, check token, get news and signout user", function(done) {
 		var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
 		var randomEmail= chars[Math.floor(Math.random()*26)] //Random email generator
                   + Math.random().toString(36).substring(2,11) 

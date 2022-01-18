@@ -13,14 +13,18 @@ const checkDuplicateEmail = async (req, res, next) => {
 
 		if (user) {
 			return res.status(400).send({
-				message: "Failed! Email is already in use!"
+				status: 400,
+				error: true,
+				errorMessage: "Failed! Email is already in use!"
 			});
 		}
 
 		next();
 	} catch (error) {
 		return res.status(500).send({
-			message: "Unable to validate Username!"
+			status: 500,
+			error: true,
+			errorMessage: "Unable to validate Username!"
 		});
 	}
 };

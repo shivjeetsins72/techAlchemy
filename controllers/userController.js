@@ -19,7 +19,11 @@ exports.signup = async (req, res) => {
 			error: false,
 			message: "User created successfully"});
 	} catch (error) {
-		res.status(500).send({ message: error.message });
+		res.status(500).send({
+			status: 500,
+			error: true,
+			errorMessage: error.message
+		});
 	}
 };
 
