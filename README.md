@@ -10,16 +10,25 @@ This application uses Mysql database. So make sure you have Mysql installed in y
 
 Database Connection:
 1. Create a mysql database 'testdb' in local
-    command: create database testdb;
+    command: 
+    create database testdb;
 2. Create user in mysql database and  grant permission to that user   
-    command: CREATE USER 'shivjeet'@'localhost' IDENTIFIED BY 'Shivjeets7@@';
-    command: GRANT ALL PRIVILEGES ON * . * TO 'shivjeet'@'localhost';
+    command: 
+    CREATE USER 'shivjeet'@'localhost' IDENTIFIED BY 'Shivjeets7@@';
+    command: 
+    GRANT ALL PRIVILEGES ON * . * TO 'shivjeet'@'localhost';
 3. To use 3rd party apis you will need ApiKey. I have hardcode my keys in this application. You can use the same or you can replace them with yours.
 4. To insatll all the packages/libraries used:
-    command: npm insatll
+    command: 
+    npm insatll
 
 ## Running application
-1. command: npm start
+1. command: 
+   npm start
 
 ## Run Api test 
-1. command: npm test
+1. command: 
+   npm test
+
+## Postman collection and environment
+The postman collection and environment has been added to 'docs' folder. Import them to test all the application endpoints.
