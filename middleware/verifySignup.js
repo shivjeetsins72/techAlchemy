@@ -1,6 +1,7 @@
 const db = require("../models/mysql");
 const User = db.user;
 
+//checkDuplicateEmail validates the email against the emails present in database
 const checkDuplicateEmail = async (req, res, next) => {
 	try {
 		// Email

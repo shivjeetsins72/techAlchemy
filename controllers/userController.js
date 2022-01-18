@@ -5,6 +5,7 @@ const User = db.user;
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
+//Function to register new user to the app
 exports.signup = async (req, res) => {
 	// Save User to Database
 	try {
@@ -22,6 +23,7 @@ exports.signup = async (req, res) => {
 	}
 };
 
+//Function to login to the application
 exports.signin = async (req, res) => {
 	try {
 		const user = await User.findOne({
@@ -69,6 +71,7 @@ exports.signin = async (req, res) => {
 	}
 };
 
+//Function to signout from the application
 exports.signout = async (req, res) => {
 	try {
 		req.session = null;

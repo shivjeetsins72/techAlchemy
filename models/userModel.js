@@ -1,3 +1,4 @@
+//User table mode
 module.exports = (sequelize, Sequelize) => {
 	const User = sequelize.define("users", {
 		name: {

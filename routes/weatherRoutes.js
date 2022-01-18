@@ -1,3 +1,4 @@
+// Weather apis routes
 const controller = require("../controllers/weatherController");
 
 module.exports = function(app) {

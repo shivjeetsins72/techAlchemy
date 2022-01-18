@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config/authConfig.js");
 
+//verifyToken validates the bearer token before accessing the authenticated endpoints
 const verifyToken = (req, res, next) => {
 	const token = req.session.token;
 

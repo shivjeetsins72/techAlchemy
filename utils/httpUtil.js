@@ -1,5 +1,7 @@
+// Http/Https requests using axios
 const axios = require("axios");
 
+//Function to get news from the https://newsapi.org. Query with country and keyword functionality is available.
 const getNews = async(params) => {
 
 	const result = await axios({
@@ -17,6 +19,7 @@ const getNews = async(params) => {
 	return(result);
 };
 
+//Function to get weather data from OpenWeatherMap
 const getWeatherForcast = async() => {
 	const result = await axios({
 		method: "GET",
@@ -25,10 +28,10 @@ const getWeatherForcast = async() => {
 			"Content-Type": "application/json"
 		},
 		params: {
-			exclude: "current,hourly,minutely,alerts",
-			lat: "12.9716",
-			lon: "77.5946",
-			units: "metric",
+			exclude: "current,hourly,minutely,alerts", //Hardcoded as per the assignment but can be changed later to dynamic easily
+			lat: "12.9716", //Hardcoded as per the assignment but can be changed later to dynamic easily
+			lon: "77.5946", //Hardcoded as per the assignment but can be changed later to dynamic easily
+			units: "metric", //Hardcoded as per the assignment but can be changed later to dynamic easily
 			appid: "506e4963ab6267a99bce7d229d53048c"// API KEY
 		},
 	});

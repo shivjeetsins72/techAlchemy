@@ -1,3 +1,4 @@
+// Function to format the news api response
 const formatNewsResult = (articles) => {
 	const result = [];
 	articles.forEach((element) =>{

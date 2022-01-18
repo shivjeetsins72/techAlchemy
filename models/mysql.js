@@ -1,3 +1,4 @@
+// Mysql connection
 const config = require("../config/dbConfig.js");
 
 const Sequelize = require("sequelize");
@@ -8,7 +9,6 @@ const sequelize = new Sequelize(
 	{
 		host: config.HOST,
 		dialect: config.dialect,
-		operatorsAliases: false
 	}
 );
 

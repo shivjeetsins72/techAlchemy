@@ -1,3 +1,4 @@
+// Users apis routes
 const { verifySignUp } = require("../middleware");
 const controller = require("../controllers/userController");
 

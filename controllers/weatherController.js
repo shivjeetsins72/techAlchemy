@@ -1,7 +1,8 @@
 const util = require("../utils/httpUtil");
 const views = require("../views");
+
+//Function to get 5 day weather forcast and send it back to the server
 exports.weather = async (req, res) => {
-	// Save User to Database
 	try {
 		const result = await util.getWeatherForcast();
 		const weatherData = result.data.daily;

@@ -1,3 +1,4 @@
+// News api route
 const middleware = require("../middleware");
 const controller = require("../controllers/newsController");
 

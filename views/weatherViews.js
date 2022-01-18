@@ -1,3 +1,4 @@
+// Function to format the weather  api response
 const formatWeatherData = (weatherData) => {
 	const result = [];
 	weatherData = weatherData.slice(0, 5);

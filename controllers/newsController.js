@@ -1,7 +1,8 @@
 const news = require("../utils/httpUtil");
 const views = require("../views");
+
+//Function to provide response back to server for the /api/news endpoint
 exports.news = async (req, res) => {
-	// Save User to Database
 	try {
 		if(req.query.country === undefined && req.query.keyword === undefined){
 			res.status(404).send({
