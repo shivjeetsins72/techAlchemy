@@ -3,7 +3,7 @@ const views = require("../views");
 exports.news = async (req, res) => {
 	// Save User to Database
 	try {
-		if(req.query.country == undefined && req.query.keyword == undefined){
+		if(req.query.country === undefined && req.query.keyword === undefined){
 			res.status(404).send({
 				status: 404,
 				error: true,
