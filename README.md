@@ -1,4 +1,4 @@
-# TechAlchemy weather and news application
+# Weather and news application
 
 ## Overview
 This application has the user registration, user signin and user signout functionalities.
